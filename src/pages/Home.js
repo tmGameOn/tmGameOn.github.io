@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
-import Tabs from "../components/Tabs";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
 import VisitorCounter from "../components/VisitorCounter";
@@ -29,10 +28,9 @@ function Home() {
     const [activeTab, setActiveTab] = useState("nerds");
 
     return (
-        <div className="app">
+        <div>
             <Navbar />
-            <Header />
-            <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
+            <Header activeTab={activeTab} setActiveTab={setActiveTab} />
             <section className="products-section">
                 <h2>{activeTab === "nerds" ? "Colecionáveis Nerds" : "Importados Beach Tennis"}</h2>
                 <div className="products-grid">
