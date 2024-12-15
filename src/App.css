@@ -189,3 +189,36 @@ footer {
     opacity: 0;
   }
 }
+
+
+/* Telas menores que 1024px (tablets) */
+@media (max-width: 1024px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Telas menores que 768px (smartphones) */
+@media (max-width: 768px) {
+  .app-header h2 {
+    font-size: 24px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
+}
+
