@@ -1,38 +1,191 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eaeaea; /* Cor de fundo mais clara */
+  overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+/* Remover espaço lateral do navbar */
+.navbar {
+  background-color: #444; /* Tom mais suave */
+  padding: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Use width: 100% em vez de 100vw */
+  box-sizing: border-box; /* Garante que padding não cause overflow */
+}
+
+.navbar h1 {
+  font-size: 24px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Remover espaço lateral do header */
+.app-header {
+  position: relative;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo mais claro */
+  width: 100%; /* Ocupa a largura total do contêiner */
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(60%); /* Vídeo mais claro */
+}
+
+.overlay-content {
+  z-index: 1;
   color: white;
+  text-align: center;
 }
 
-.App-link {
+.overlay-content h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.overlay-content p {
+  font-size: 20px;
+}
+
+/* Tabs */
+.tabs button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.tabs button.active {
+  background-color: #61dafb;
+}
+
+/* Produtos */
+.products-section {
+  flex: 1;
+  margin: 20px 40px; /* Espaçamento nas laterais */
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  background-color: #fff; /* Fundo claro para os produtos */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-image img {
+  width: 100%;
+  height: 280px; /* Aumenta o tamanho da imagem */
+  object-fit: contain; /* Ajusta o tamanho da imagem ao quadro */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.product-details h3 {
+  font-size: 18px;
+  color: #333; /* Texto escuro */
+  text-align: center; /* Centralizar o nome do produto */
+}
+
+.price {
+  font-size: 16px;
   color: #61dafb;
+  text-align: center; /* Centralizar o preço */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.buy-button {
+  display: block; /* Centralizar o botão */
+  margin: 10px auto 0 auto; /* Centralizar e dar espaçamento */
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #21a1f1;
+}
+
+/* Footer */
+footer {
+  background-color: #444; /* Fundo do rodapé mais suave */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* Usa 100% ao invés de 100vw para evitar overflow */
+}
+
+.footer-content {
+  margin-top: auto;
+}
+
+/* Efeito de piscada para o parágrafo */
+.overlay-content p {
+  font-size: 20px;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 0;
   }
 }
