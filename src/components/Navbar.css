@@ -7,6 +7,9 @@
     align-items: center;
     padding: 15px 20px;
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10; /* Garante que a navbar esteja acima do restante */
 }
 
 .navbar h1 {
@@ -48,15 +51,16 @@
     }
 
     .nav-links {
-        display: none; /* Esconde os links */
+        display: none; /* Esconde os links por padrão */
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
+        position: fixed; /* Fixa o menu na tela */
+        top: 60px; /* Distância a partir do topo */
+        right: 0; /* Alinha o menu no canto direito */
+        width: 100%; /* Ocupa toda a largura */
         background-color: #444;
-        width: 100%;
         text-align: center;
-        padding: 10px 0;
+        padding: 20px 0;
+        z-index: 100; /* Garante que o menu fique acima de tudo */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     }
 
@@ -70,7 +74,7 @@
 
     .nav-links li a {
         font-size: 20px;
-        padding: 10px 0;
         display: block;
+        padding: 10px 0;
     }
 }

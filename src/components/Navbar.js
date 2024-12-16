@@ -11,19 +11,15 @@ function Navbar() {
     return (
         <nav className="navbar">
             <h1>T&M GameOn Imports</h1>
-            {/* Ícone do menu hambúrguer */}
             <div className="hamburger" onClick={toggleMenu}>
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
             </div>
-
-            {/* Links do Navbar */}
             <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-                <li><a href="#home">Home</a></li>
                 <li>
                     <a
-                        href="https://wa.me/5511999999999" // Número do WhatsApp (substitua pelo seu)
+                        href="https://wa.me/5511999999999"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
